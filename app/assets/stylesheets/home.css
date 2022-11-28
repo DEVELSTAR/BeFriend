@@ -1,31 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
 .home-index{
-/*	border: 5px solid red;*/
-/*	height: 100vh;*/
-}
-.home-box{
-/*	border: 2px solid red;*/
-}
-.home-box-img{
-/*	border: 5px solid red;*/
-    background-image: url('https://wallpapercave.com/dwp1x/wp2567338.png');
+	border: 5px solid red;
 	height: 100vh;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-.home-box-cont{
-/*	border: 2px solid red;*/
-	display: flex;
-	width: 70%;
-	margin: auto;
-	padding-top: 95%;
-}
-.fr{
-/*	border: 2px solid red;*/
-	font-size: 5rem;
-	color: black;
-	font-weight: bold;
-	font-family: arial;
-    font-family: 'Rubik Microbe', cursive;
 }

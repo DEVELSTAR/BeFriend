@@ -5,7 +5,7 @@
 		<div><%= link_to 'create a post', new_post_path , class: "navbar-link" %></div>
 	</div>
 	<div>
-		<div><%= link_to 'Friends posts', root_path, class: "navbar-link" %></div>
+		<div><%= link_to 'Friends posts', home_friends_post_path, class: "navbar-link" %></div>
 		<div><%= link_to 'all posts', posts_path, class: "navbar-link" %></div>
 		<div>
 			<% if user_signed_in? %>

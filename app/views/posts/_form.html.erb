@@ -1,0 +1,7 @@
+  <%= form_with model: @post do |f| %>
+      <%= f.text_field :title %>
+      <%= f.text_field :description %>
+      <%= f.hidden_field :user_id, value: current_user.id, class:'d-none'%>
+      <%= f.submit 'Create Post', class: 'btn btn-primary' %>
+  <% end %>
+<%= link_to "back", root_path %>

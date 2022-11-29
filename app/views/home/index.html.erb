@@ -1,4 +1,8 @@
 <div class="home-index">
 	<%= render 'shared/navbar' %>
-	<%= render 'friends/my_friends' %>
+
+    <h1>my followers (<%= current_user.followers.count %>)</h1>
+	<% @followers.each do |f| %>
+	<%= f.email %><br>
+	<% end %>
 </div>

@@ -1,6 +1,6 @@
 <% @users.each do |u| %>
   <div>
-    <%= u.email %>
+    <%= link_to u.email, user_path(u) %>
     <% if u == current_user %>
       <%= link_to "Edit Profile", edit_user_path(current_user), class: "edit-profile" %>
     <% elsif current_user.followees.include?(u)  %>

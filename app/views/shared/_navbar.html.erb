@@ -1,12 +1,21 @@
 <div class="navbar">
 	<div>
-		<div><%#= link_to 'Profile', user_path , class: "navbar-link" %></div>
+		<div><%= link_to 'Profile', user_path(current_user) , class: "navbar-link" %></div>
 		<div><%= link_to 'all users', root_path, class: "navbar-link" %></div>
 		<div><%= link_to 'create a post', root_path, class: "navbar-link" %></div>
 	</div>
 	<div>
 		<div><%= link_to 'Friends posts', root_path, class: "navbar-link" %></div>
 		<div><%= link_to 'all posts', root_path, class: "navbar-link" %></div>
+		<div>
+			<% if user_signed_in? %>
+			  <%= link_to current_user.email , root_path, class: "navbar-link" %>
+			  <%= link_to "log out" , destroy_user_session_path, data: {turbo_method: :delete}, class: "navbar-link" %>
+			<% else %>
+			  <%= link_to "sign up", user_session_path, class: "navbar-link" %>
+			<% end %>		
+		</div>
+
 	</div>
 </div>
 	

@@ -1,5 +1,12 @@
 <% @posts.each do |post| %>
-  <%= post.user.email %><br>
+  
+  <% if post.user.name.present? %>
+    <%= link_to post.user.name, user_path(post.user) %><br>
+  <% else %>
+    <%= link_to post.user.email, user_path(post.user) %><br>
+  <% end %>
+
   <%= post.title %><br>
   <%= post.description %><br><br>
 <% end %>
+<%= link_to 'Back', :back %>

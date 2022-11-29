@@ -1,4 +1,8 @@
 <h1>User</h1>
+<%= @user.name %><br>
+<%= @user.bio %><br>
+<%= @user.phone %><br>
 <%= @user.email %><br>
-<%= link_to "Edit profile", edit_user_path %>
-<%= link_to "back", root_path %>
+
+<%= link_to "Edit profile", edit_user_path if @user == current_user %>
+<%= link_to 'Back', :back %>

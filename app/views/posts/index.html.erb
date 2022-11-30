@@ -1,31 +1,36 @@
+<% c = 0 %>
 <% @posts.each do |post| %>
-  <div class="posts-post">
-    <div>Post id = > <%= post.id %></div>
-    <% if post.user.name.present? %>
-      <%= link_to post.user.name, user_path(post.user) %><br>
-    <% else %>
-      <%= link_to post.user.email, user_path(post.user) %><br>
-    <% end %>
-
-    <div><strong>Title: </strong><%= link_to post.title, post_path(post) %></div>
-    <div><strong>desc: </strong><%= post.description %></div>
-    <%= button_to 'delete', post_path(post), method: :delete if post.user == current_user %>
-
-    <div class="posts-post-comments">
-      <strong>Comments</strong> 
-      <% post.comments.each do |comment| %>
-        <p><%= comment.user.name.present? ? comment.user.name : comment.user.email%></p>
-        <p><%= comment.body %></p>
-        <%= button_to 'delete', [comment.post, comment], method: :delete if comment.user == current_user %>
+  <% if post.status != 'Friends' && post.status != 'private' %>
+  <% c = c + 1  %>
+    <div class="posts-post">
+      <div>Post id = > <%= post.id %></div>
+      <% if post.user.name.present? %>
+        <%= link_to post.user.name, user_path(post.user) %><br>
+      <% else %>
+        <%= link_to post.user.email, user_path(post.user) %><br>
       <% end %>
+
+      <div><strong>Title: </strong><%= link_to post.title, post_path(post) %></div>
+      <div><strong>desc: </strong><%= post.description %></div>
+      <%= button_to 'delete', post_path(post), method: :delete if post.user == current_user %>
+
+      <div class="posts-post-comments">
+        <strong>Comments</strong> 
+        <% post.comments.each do |comment| %>
+          <p><%= comment.user.name.present? ? comment.user.name : comment.user.email%></p>
+          <p><%= comment.body %></p>
+          <%= button_to 'delete', [comment.post, comment], method: :delete if comment.user == current_user %>
+        <% end %>
+      </div>
+
+      <%= form_with model: [post, post.comments.build] do |form| %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
+        <%= form.hidden_field :post_id, value: post.id %>
+        <%= form.text_area :body, placeholder: "Add a new comment..." %>
+        <%= form.submit "Post Comment" %>
+      <% end %>
+
     </div>
-
-    <%= form_with model: [post, post.comments.build] do |form| %>
-      <%= form.hidden_field :user_id, value: current_user.id %>
-      <%= form.hidden_field :post_id, value: post.id %>
-      <%= form.text_area :body, placeholder: "Add a new comment..." %>
-      <%= form.submit "Post Comment" %>
-    <% end %>
-
-  </div>
+  <% end %>
 <% end %>
+<div><strong>Total posts: </strong><%= c %></div>

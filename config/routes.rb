@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
 
   get 'home/friends_post'
+  get 'home/private_post'
 end

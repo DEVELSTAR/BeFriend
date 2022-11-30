@@ -1,10 +1,10 @@
 <h2>My friends' posts </h2>
 <% current_user.followees.each do |followed| %>
-    <% followed.posts.each do |post| %><br><br>
-      <div class="friends-post">
-        <div><strong>Name: </strong><%= post.user.name.present? ? post.user.name : post.user.email %></div>
-        <div><strong>Title: </strong><%= post.title %></div>
-        <div><strong>Desc: </strong><%= post.description %></div>
-      </div>
-    <% end %>
+  <% followed.posts.each do |post| %><br><br>
+    <div class="friends-post">
+      <div><strong>Name: </strong><%= post.user.name.present? ? post.user.name : post.user.email %></div>
+      <div><strong>Title: </strong><%= post.title %></div>
+      <div><strong>Desc: </strong><%= post.description %></div>
+    </div>
+  <% end %>
 <% end %>

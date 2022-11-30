@@ -1,0 +1,7 @@
+<h1>Private post</h1>
+<% @posts.each do |post| %>
+  <% if post.status == "private" %>
+    <div><strong>Title: </strong><%= post.title %></div>
+    <div><strong>Desc: </strong><%= post.description %></div>
+  <% end %>
+<% end %>

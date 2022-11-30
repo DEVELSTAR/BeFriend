@@ -39,3 +39,6 @@ a:hover{
     color: blue;
     font-weight: bolder;
 }
+.hello{
+    border: 2px solid red;
+}

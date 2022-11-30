@@ -1,7 +1,7 @@
 <div class="users-show">
-	<strong>Name: </strong><%= @user.name %><br>
-	<strong>Bio: </strong><%= @user.bio %><br>
-	<strong>Phone: </strong><%= @user.phone %><br>
-	<strong>Email: </strong><%= @user.email %><br>
+	<strong>Name: </strong><%= @user.name ? @user.name : 'unavailable' %><br>
+	<strong>Bio: </strong><%= @user.bio ? @user.bio : 'unavailable' %><br>
+	<strong>Phone: </strong><%= @user.phone ? @user.phone : 'unavailable' %><br>
+	<strong>Email: </strong><%= @user.email ? @user.email : 'unavailable' %><br>
 	<%= link_to "Edit profile", edit_user_path if @user == current_user %>
 </div>

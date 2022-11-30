@@ -1,0 +1,16 @@
+.posts-post{
+	border: 5px solid red;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	line-height: 1.5rem;
+}
+.posts-btns{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1.5rem;
+	color: blue;
+	font-weight: bolder;
+}
+.posts-btn{
+	text-decoration: none;
+}

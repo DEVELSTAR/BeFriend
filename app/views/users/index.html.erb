@@ -1,12 +1,14 @@
 <% @users.each do |u| %>
   <div class="users-user">
-    <%= link_to u.email, user_path(u) %><br>
-    <div><%= u.name %></div>
-    <div><%= u.bio %></div>
-    <div><%= u.phone %></div>
+    <a href="<%= user_path(u)%>"><div><strong>Name: </strong><%= u.name ? u.name : 'unavailable' %></div></a>
+    <div><strong>Bio: </strong><%= u.bio ? u.bio : 'unavailable' %></div>
+    <div><strong>Phone: </strong><%= u.phone ? u.phone : 'unavailable' %></div>
+    <div><strong>Email: </strong><%= u.email %></div>
+    <p>Total posts = <%= u.posts.count %></p>
+    <p>Total comments = <%= u.comments.count %></p>
     <div>
       <% if u == current_user %>
-        <%= link_to "Edit Profile", edit_user_path(current_user), class: "edit-profile" %>
+        <%= link_to "Edit Your Profile =>", edit_user_path(current_user), class: "edit-profile" %>
       <% elsif current_user.followees.include?(u)  %>
         <%= button_to "Unfollow", unfollow_user_path(u), method: "POST", class: "follow" %>
       <% else %>

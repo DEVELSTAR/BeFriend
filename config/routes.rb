@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   resources :users
-  resources :posts
+  
+  resources :posts do 
+    resources :comments
+  end
+
   resources :follows
   
   post '/users/:id/follow', to: "users#follow", as: "follow_user"

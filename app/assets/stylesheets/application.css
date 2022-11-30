@@ -18,6 +18,7 @@
     box-sizing: border-box;
     border: 0;
     margin: 0;
+    font-family: arial, sans-serif;
 }
 body{
     padding: 2rem;
@@ -29,5 +30,12 @@ input{
 textarea{
     border: 2px solid black;
     margin-bottom: 1rem;
-    height: 20vh;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: blue;
+    font-weight: bolder;
 }

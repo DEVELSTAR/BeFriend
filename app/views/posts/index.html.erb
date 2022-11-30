@@ -1,12 +1,13 @@
 <% @posts.each do |post| %>
-  
-  <% if post.user.name.present? %>
-    <%= link_to post.user.name, user_path(post.user) %><br>
-  <% else %>
-    <%= link_to post.user.email, user_path(post.user) %><br>
-  <% end %>
+  <div class="posts-post">
+    <% if post.user.name.present? %>
+      <%= link_to post.user.name, user_path(post.user) %><br>
+    <% else %>
+      <%= link_to post.user.email, user_path(post.user) %><br>
+    <% end %>
 
-  <%= post.title %><br>
-  <%= post.description %><br><br>
+    <strong>Title: </strong><%= post.title %><br>
+    <strong>desc: </strong><%= post.description %><br><br>
+    <%= button_to 'delete', post_path(post), method: :delete if post.user == current_user %>
+  </div>
 <% end %>
-<%= link_to 'Back', :back %>

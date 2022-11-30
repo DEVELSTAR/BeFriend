@@ -1,13 +1,17 @@
 <% @users.each do |u| %>
-  <div>
-    <%= link_to u.email, user_path(u) %>
-    <% if u == current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user), class: "edit-profile" %>
-    <% elsif current_user.followees.include?(u)  %>
-      <%= button_to "Unfollow", unfollow_user_path(u), method: "POST", class: "follow" %>
-    <% else %>
-      <%= button_to "Follow", follow_user_path(u), method: "POST", class: "follow" %>
-    <% end %>
-  </div><br>
+  <div class="users-user">
+    <%= link_to u.email, user_path(u) %><br>
+    <div><%= u.name %></div>
+    <div><%= u.bio %></div>
+    <div><%= u.phone %></div>
+    <div>
+      <% if u == current_user %>
+        <%= link_to "Edit Profile", edit_user_path(current_user), class: "edit-profile" %>
+      <% elsif current_user.followees.include?(u)  %>
+        <%= button_to "Unfollow", unfollow_user_path(u), method: "POST", class: "follow" %>
+      <% else %>
+        <%= button_to "Follow", follow_user_path(u), method: "POST", class: "follow" %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
-<%= link_to 'Back', :back %>

@@ -1,7 +1,7 @@
-<h1>User</h1>
-<%= @user.name %><br>
-<%= @user.bio %><br>
-<%= @user.phone %><br>
-<%= @user.email %><br>
-
-<%= link_to "Edit profile", edit_user_path if @user == current_user %>
+<div class="users-show">
+	<strong>Name: </strong><%= @user.name %><br>
+	<strong>Bio: </strong><%= @user.bio %><br>
+	<strong>Phone: </strong><%= @user.phone %><br>
+	<strong>Email: </strong><%= @user.email %><br>
+	<%= link_to "Edit profile", edit_user_path if @user == current_user %>
+</div>

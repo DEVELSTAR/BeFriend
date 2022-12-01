@@ -1,0 +1,16 @@
+.back-btns{
+    height: 10vh;
+	padding-top: 2rem;
+	display: flex;
+	justify-content: space-around;
+	font-weight: bolder;
+	background-color: wheat;
+}
+.back-btn{
+	text-decoration: none;
+	border: 2px solid red;
+	background-color: red;
+	padding: 0.3rem 1.2rem;
+	color: black;
+	font-size: 1.5rem;
+}

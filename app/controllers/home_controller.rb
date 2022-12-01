@@ -17,4 +17,5 @@ class HomeController < ApplicationController
   def my_posts
     @posts = current_user.posts
   end
+
 end

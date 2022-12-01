@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'home/private_post'
   get 'home/liked_post'
   get 'home/my_posts'
+  get 'home/followers'
+  get 'home/followees'
 
   resources :likes, only: [:create, :destroy]
 end

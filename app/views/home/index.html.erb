@@ -1,14 +1,3 @@
 <div class="home-index">
 	<%= render 'shared/navbar' %>
-
-    <h1>my followers (<%= current_user.followers.count %>)</h1>
-	<% @user.followers.each do |f| %>
-	<%= f.email %><br>
-	<% end %>
-
-
-    <h1>my followees (<%= current_user.followees.count %>)</h1>
-	<% @user.followees.each do |f| %>
-	<%= f.email %><br>
-	<% end %><br><br>
 </div>

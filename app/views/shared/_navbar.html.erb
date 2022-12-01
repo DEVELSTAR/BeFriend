@@ -10,9 +10,15 @@
 		<div><%= link_to 'All users', users_path  , class: "navbar-link" %></div>
 		<div><%= link_to 'Liked post', home_liked_post_path , class: "navbar-link" %></div>
 		<div><%= link_to 'My post', home_my_posts_path , class: "navbar-link" %></div>
+		<div>
+			<%= link_to 'Followers', home_followers_path , class: "navbar-link" %>
+			(<%= current_user.followers.count %>)
+		</div>
+		<div>
+			<%= link_to 'Followees', home_followees_path , class: "navbar-link" %>
+			(<%= current_user.followees.count %>)
+		</div>
 		<div><%= link_to 'create a post', new_post_path , class: "navbar-link" %></div>
-	</div>
-	<div>
 		<div><%= link_to 'Friends posts', home_friends_post_path, class: "navbar-link" %></div>
 		<div><%= link_to 'All posts', posts_path, class: "navbar-link" %></div>
 		<%= link_to 'Private post', home_private_post_path %>

@@ -30,6 +30,7 @@
            <%= button_to "Unlike", like_path(like), method: :delete %>
         <% end %>
       </div>
+     <div><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
 
       <div class="posts-post-comments">
         <div><strong>Comments</strong> <%= post.comments.count %> </div>

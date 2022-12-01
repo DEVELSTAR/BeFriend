@@ -1,3 +1,6 @@
-<%= @post.title %><br>
-<%= @post.description %><br>
-<%= @post.user.email %><br>
+<div class="show-posts">
+	<div><strong>Name: </strong><%= @post.user.name.present? ? @post.user.name : @post.user.email %>
+	<div><strong>Title: </strong><%= @post.title %></div>
+	<div><strong>Desc: </strong><%= @post.description %></div>
+	<div><strong>Created at: </strong><%= time_ago_in_words(@post.created_at) %> ago</div>
+</div>

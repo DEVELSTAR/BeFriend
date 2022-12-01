@@ -9,4 +9,8 @@ class HomeController < ApplicationController
   def private_post
     @posts = current_user.posts
   end
+
+  def liked_post
+    @posts = current_user.liked_posts
+  end
 end

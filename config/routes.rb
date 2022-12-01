@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'home/friends_post'
   get 'home/private_post'
+  get 'home/liked_post'
 
   resources :likes, only: [:create, :destroy]
 end

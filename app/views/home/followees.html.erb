@@ -1,3 +1,4 @@
+(<%= current_user.followees.count %>)
 <% current_user.followees.each do |f| %>
 <%= f.name %>
 <% end %>

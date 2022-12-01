@@ -1,10 +1,19 @@
 .navbar{
-	border: 2px solid black;
-	display: flex;
-	justify-content: space-between;
+/*	border: 2px solid black;*/
 	line-height: 2rem;
+	text-align: center;
+	margin-top: 2rem;
+}
+.navbar div{
+	margin-bottom: 1rem;
+    background-color: #2517e8;
+    border-radius: 40px;
+}
+.navbar div:hover{
+	background-color: red;
 }
 .navbar-link{
-	text-decoration: none;
-	color: black;
+	color: white;
+	font-weight: bolder;
+	font-size: 1.5rem;
 }

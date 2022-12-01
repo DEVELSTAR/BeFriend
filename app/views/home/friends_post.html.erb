@@ -1,6 +1,5 @@
-<h2>My friends' posts </h2>
 <% current_user.followees.each do |followed| %>
-  <% followed.posts.each do |post| %><br><br>
+  <% followed.posts.each do |post| %>
     <% if post.status != 'private' %>
       <div class="friends-post">
         <div><strong>Name: </strong><%= post.user.name.present? ? post.user.name : post.user.email %></div>

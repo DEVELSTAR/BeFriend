@@ -1,11 +1,12 @@
-<h1>Private post</h1>
 <% c = 0 %>
 <% @posts.each do |post| %>
   <% if post.status == "private" %>
-  <% c = c + 1 %>
-    <div><strong>Title: </strong><%= post.title %></div>
-    <div><strong>Desc: </strong><%= post.description %></div>
-    <div><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
+    <div class="liked_post">
+    <% c = c + 1 %>
+      <div><strong>Title: </strong><%= post.title %></div>
+      <div><strong>Desc: </strong><%= post.description %></div>
+      <div><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
+    </div>
   <% end %>
 <% end %><br><br>
 <% if c == 0  %>

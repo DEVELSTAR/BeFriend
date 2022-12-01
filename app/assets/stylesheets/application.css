@@ -23,19 +23,10 @@
 body{
     background-color: wheat;
 }
-input{
-    border: 2px solid black;
-    margin-bottom: 1rem;
-}
-textarea{
-    border: 2px solid black;
-    margin-bottom: 1rem;
-}
 a{
     text-decoration: none;
 }
-/*a:hover{
+a:hover{
     color: blue;
     font-weight: bolder;
 }
-*/

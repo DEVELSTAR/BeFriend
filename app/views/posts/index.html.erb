@@ -25,32 +25,36 @@
       <div>
         <% like = current_user.likes.find_by(post: post) %>
         <% if like.nil? %>
-           <%= button_to "Like", likes_path, params: { like: {post_id: post.id}}, method: :post %>
+           <%= button_to "Like", likes_path, params: { like: {post_id: post.id}}, method: :post , class: "like" %>
         <% else %>
-           <%= button_to "Unlike", like_path(like), method: :delete %>
+           <%= button_to "Unlike", like_path(like), method: :delete, class: "unlike" %>
         <% end %>
       </div>
      <div><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
-
+      <div>
+        <%= button_to 'delete your post', post_path(post), method: :delete, class: "unlike" if post.user == current_user  %>
+      </div>
       <div class="posts-post-comments">
         <div><strong>Comments</strong> <%= post.comments.count %> </div>
         <% post.comments.each do |comment| %>
-          <p><%= comment.user.name.present? ? comment.user.name : comment.user.email%></p>
-          <p><%= comment.body %></p>
-          <%= button_to 'delete', [comment.post, comment], method: :delete if comment.user == current_user %>
+          <div class="posts-post-comment">
+            <p><%= comment.user.name.present? ? comment.user.name : comment.user.email%></p>
+            <p><%= comment.body %></p>
+            <div>
+              <%= button_to 'delete your comment', [comment.post, comment], method: :delete, class: "unlike" if comment.user == current_user  %>
+            </div>
+          </div>
         <% end %>
       </div>
       
       <div>
         <%= form_with model: [post, post.comments.build] do |form| %>
-          <%= form.hidden_field :user_id, value: current_user.id %>
-          <%= form.hidden_field :post_id, value: post.id %>
-          <%= form.text_area :body, placeholder: "Add a new comment..." %>
-          <%= form.submit "Post Comment" %>
+          <div><%= form.hidden_field :user_id, value: current_user.id %></div>
+          <div><%= form.hidden_field :post_id, value: post.id %></div>
+          <div><%= form.text_area :body, placeholder: "Add a new comment...", class: "comment-body" %></div>
+          <div><%= form.submit "Post Comment", class: "comment-btn" %></div>
         <% end %>
-        <%= button_to 'delete your post', post_path(post), method: :delete if post.user == current_user %>
       </div>
-
     </div>
   <% end %>
 <% end %>

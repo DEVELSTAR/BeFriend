@@ -1,13 +1,13 @@
 .users-show{
 	line-height: 3rem;
-	padding: 1rem;
+	padding: 2rem;
 	background-color: wheat;
 	height: 90vh;
 }
 .users-show-details{
 	margin-top: 2rem;
 	border: 5px solid red;
-	padding: 1rem;
+	padding: .5rem;
 }
 .users-show-edits{
 	margin-top: 3rem;

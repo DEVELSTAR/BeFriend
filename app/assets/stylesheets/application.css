@@ -20,6 +20,9 @@
     margin: 0;
     font-family: arial, sans-serif;
 }
+body{
+    background-color: wheat;
+}
 input{
     border: 2px solid black;
     margin-bottom: 1rem;

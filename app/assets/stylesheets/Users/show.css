@@ -3,10 +3,9 @@
 	padding: 1rem;
 	background-color: wheat;
 	height: 90vh;
-	font-size: 2rem;
 }
 .users-show-details{
-	margin-top: 3rem;
+	margin-top: 2rem;
 	border: 5px solid red;
 	padding: 1rem;
 }
@@ -16,7 +15,7 @@
 	text-align: center;
 }
 .users-show-edit{
-	color: black;
+	color: white;
 	font-weight: bolder;
 	padding: .5rem 1.5rem;
 	margin-top: 2rem;

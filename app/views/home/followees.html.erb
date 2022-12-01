@@ -1,4 +1,10 @@
-(<%= current_user.followees.count %>)
-<% current_user.followees.each do |f| %>
-<%= f.name %>
-<% end %>
+<div class="followers" >
+	<div class="total-followers"><strong>Total Followees: </strong><%= current_user.followees.count %></div>
+	<% current_user.followees.each do |f| %>
+	<div class="follower">
+		<a href="<%= user_path(f) %>">
+	      <%= f.name.present? ? f.name : f.email %>
+	    </a>
+    </div>
+	<% end %>
+</div>

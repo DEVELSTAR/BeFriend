@@ -1,0 +1,18 @@
+.followers{
+	background-color: wheat;
+	padding: 2rem;
+	font-size: 1.5rem;
+}
+.total-followers{
+	border: 4px solid red;
+	margin-bottom: 2rem;
+	padding: 1rem 2rem;
+}
+.follower{
+	border: 4px solid red;
+	margin-bottom: 2rem;
+	padding: 1rem 2rem;
+}
+.follower a{
+	color: black;
+}

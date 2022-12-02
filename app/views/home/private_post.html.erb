@@ -9,7 +9,10 @@
       <div><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
     </div>
   <% end %>
-<% end %><br><br>
+<% end %>
 <% if c == 0  %>
-  <h3>You don't have any private post.</h3>
+  <div class="liked_post">
+    <h3 >You don't have any private post.</h3><br>
+    <h3><%= link_to 'create a private post', new_post_path  %></h3>
+  </div>
 <% end %>

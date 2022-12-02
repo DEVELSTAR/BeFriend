@@ -2,9 +2,11 @@
     height: 100vh;
 }
 .index-logo{
-	padding-top: 4rem;
 	font-size: 4rem;
 	font-weight: bolder;
 	text-align: center;
-	color: white;
+	color: red;
+	margin-top: 6rem;
+	margin-bottom: 4rem;
+	font-family: 'Great Vibes', cursive;
 }

@@ -1,10 +1,18 @@
 <%= render 'layouts/home_back_btn' %>
+<% c = 0 %>
 <% @posts.each do |post| %>
 	<div class="liked_post">
+    <% c = c + 1 %>
 		<div><strong>Post id: </strong><%= post.id %></div>
 		<div><strong>Name: </strong><%= post.user.name.present? ? post.user.name : post.user.email %></div>
 		<div><strong>Title: </strong><%= link_to post.title, post %></div>
 		<div><strong>Desc: </strong><%= post.description %></div>
 	   <div><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
+	</div>
+<% end %>
+<% if c == 0  %>
+	<div class="liked_post">
+	  <h3 >You don't have any post.</h3><br>
+	  <h3><%= link_to 'create a new post', new_post_path  %></h3>
 	</div>
 <% end %>

@@ -3,11 +3,11 @@
 <% @posts.each do |post| %>
     <% c = c + 1 %>
 	<div class="liked_post">
-		<div><strong>Post id: </strong><%= post.id %></div>
+		<div class="post-id"><strong>Post id: </strong><%= post.id %></div>
 		<div><strong>Name: </strong><%= post.user.name.present? ? post.user.name : post.user.email %></div>
 		<div><strong>Title: </strong><%= link_to post.title, post %></div>
 		<div><strong>Desc: </strong><%= post.description %></div>
-	   <div><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
+	   <div class="post-id"><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
 	</div>
 <% end %>
 <% if c == 0  %>

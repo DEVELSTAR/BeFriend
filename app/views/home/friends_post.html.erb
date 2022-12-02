@@ -6,10 +6,11 @@
   <% followed.posts.each do |post| %>
     <% if post.status != 'private' %>
     <% c = c + 1 %>
-      <div class="friends-post">
+      <div class="liked_post">
         <div><strong>Name: </strong><%= post.user.name.present? ? post.user.name : post.user.email %></div>
         <div><strong>Title: </strong><%= post.title %></div>
         <div><strong>Desc: </strong><%= post.description %></div>
+        <div class="post-id"><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
       </div>
     <% end %>
   <% end %>

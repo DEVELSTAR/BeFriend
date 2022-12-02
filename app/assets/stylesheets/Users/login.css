@@ -76,3 +76,8 @@
 		margin-top: 1rem;
 	}
 }
+@media only screen and (max-height: 500px) {
+	.login-logo{
+		display: none;
+	}
+}

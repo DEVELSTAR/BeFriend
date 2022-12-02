@@ -4,8 +4,17 @@
 		<div><strong>Bio: </strong><%= @user.bio ? @user.bio : 'unavailable' %></div>
 		<div><strong>Phone: </strong><%= @user.phone ? @user.phone : 'unavailable' %></div>
 		<div><strong>Total posts: </strong><%= @user.posts.count %></div>
-		<div><strong>Followers: </strong><%= @user.followers.count %></div>
-		<div><strong>Followees: </strong><%= @user.followees.count %></div>
+		
+		<div>
+			<strong>Followers: </strong>
+			<%= link_to @user.followers.count, home_followers_path %>
+		</div>
+
+		<div>
+			<strong>Followees: </strong>
+			<%= link_to @user.followees.count, home_followees_path %>
+		</div>
+
 		<div><strong>Email: </strong><%= @user.email ? @user.email : 'unavailable' %></div>
 		<div class="users-show-edits">
 			<% if @user == current_user %>

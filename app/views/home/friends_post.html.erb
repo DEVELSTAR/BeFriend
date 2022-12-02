@@ -1,7 +1,11 @@
 <%= render 'layouts/home_back_btn' %>
+<% c = 0 %>
+<% d = 0 %>
 <% current_user.followees.each do |followed| %>
+<% d = d + 1 %>
   <% followed.posts.each do |post| %>
     <% if post.status != 'private' %>
+    <% c = c + 1 %>
       <div class="friends-post">
         <div><strong>Name: </strong><%= post.user.name.present? ? post.user.name : post.user.email %></div>
         <div><strong>Title: </strong><%= post.title %></div>
@@ -9,4 +13,14 @@
       </div>
     <% end %>
   <% end %>
+<% end %>
+<% if d == 0  %>
+  <div class="liked_post">
+    <h3 >You don't have any Friend.</h3><br>
+    <h3><%= link_to 'Make someone your friend', users_path  %></h3>
+  </div>
+<% elsif c == 0 %>
+  <div class="liked_post">
+    <h3 >Your friends don't have any post.</h3><br>
+  </div>
 <% end %>

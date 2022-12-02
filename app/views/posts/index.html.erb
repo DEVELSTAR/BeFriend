@@ -4,7 +4,7 @@
   <% if post.status != 'Friends' && post.status != 'private' %>
   <% c = c + 1  %>
     <div class="posts-post">
-      <div><strong>Post id = > </strong> <%= post.id %></div>
+      <div class="post-id"><strong>Post id = > </strong> <%= post.id %></div>
       <% if post.user.name.present? %>
         <strong>Name: </strong><%= link_to post.user.name, user_path(post.user) %><br>
       <% else %>
@@ -13,25 +13,19 @@
 
       <div><strong>Title: </strong><%= link_to post.title, post_path(post) %></div>
       <div><strong>desc: </strong><%= post.description %></div>
-      
-      <div>
-        <%  @sum = post.likes.count %>
-        <% if @sum > 1 %>
-          <span><strong>Likes</strong> <%= @sum %></span>
-        <% else %>
-          <span><strong>Like</strong> <%= @sum %></span>
-        <% end %>
-      </div>  
 
-      <div>
+      <div class="post-index-likes">
+        <div><%= post.likes.count  %></div>
         <% like = current_user.likes.find_by(post: post) %>
-        <% if like.nil? %>
-           <%= button_to "Like", likes_path, params: { like: {post_id: post.id}}, method: :post , class: "like" %>
-        <% else %>
-           <%= button_to "Unlike", like_path(like), method: :delete, class: "unlike" %>
-        <% end %>
+        <div>
+          <% if like.nil? %>
+             <%= button_to "Like", likes_path, params: { like: {post_id: post.id}}, method: :post , class: "like" %>
+          <% else %>
+             <%= button_to "Unlike", like_path(like), method: :delete, class: "unlike" %>
+          <% end %>
+        </div>
       </div>
-     <div><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
+     <div class="post-index-created"><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
       <div>
         <%= button_to 'delete this post', post_path(post), method: :delete, class: "unlike" if post.user == current_user  %>
       </div>

@@ -4,22 +4,35 @@
 	margin-bottom: 2rem;
 	padding: 1rem;
 	line-height: 2rem;
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 	color: white;
+}
+.post-index-likes{
+	display: flex;
+	font-size: 1rem;
 }
 .posts-post .like{
 	background-color: blue;
 	font-weight: bolder;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	color: white;
 	cursor: pointer;
+	margin-left: 1rem;
 }
 .posts-post .unlike{
 	background-color: red;
 	font-weight: bolder;
-	font-size: 1.2rem;
+/*	font-size: 1rem;*/
 	color: white;
 	cursor: pointer;
+	margin-left: 1rem;
+
+}
+.post-index-created{
+	font-size: 1rem;
+}
+.post-id{
+	font-size: 1rem;
 }
 .posts-post-comments{
 	margin-top: 1.5rem;
@@ -28,9 +41,7 @@
 .posts-post-comment{
 	border: 4px solid black;
 	margin-bottom: 1rem;
-}
-.posts-post-comments .delete{
-	border: 2px solid red;
+	font-size: 1.2rem;
 }
 .comment-body{
 	width: 100%;

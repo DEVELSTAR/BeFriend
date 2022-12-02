@@ -1,0 +1,42 @@
+.users-edit{
+	margin-top: 2rem;
+	padding: 1rem;
+	font-size: 2rem;
+	color: white;
+}
+.users-edits{
+    margin-top: 1rem;
+	display: flex;
+	width: 100%;
+	padding-right: 1rem;
+/*	border: 2px solid red;*/
+}
+.user-edit-label{
+	width: 20%;
+}
+.user-edit-field{
+	width: 82%;
+}
+.user-edit{
+	width: 103%;
+	font-size: 1rem;
+	padding: .5rem 1rem;
+	margin-left: .5rem;
+}
+.user-bio{
+	height: 6rem;
+}
+@media only screen and (max-width: 390px) {
+	.user-edit-field{
+		width: 80%;
+		font-size: ;
+	}
+	.user-edit-label{
+		font-size: 1.7rem;
+	}
+}
+@media only screen and (max-height: 500px) {
+	.back-btn{
+		display: none;
+	}
+}

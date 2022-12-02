@@ -1,13 +1,26 @@
 <%= render 'layouts/home_back_btn' %>
-<%= form_with model: current_user, local: true do |f| %>
-  <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
-  <%= f.label :bio %><br>
-    <%= f.text_area :bio %><br>
-  <%= f.label :email %><br>
-    <%= f.text_field :email %><br>
-  <%= f.label :phone %><br>
-    <%= f.text_field :phone %><br>
-    <%= f.submit "Submit" %>
-<% end %>
-<%= link_to 'Back', :back %>
+<div class="users-edit">
+  <%= form_with model: current_user, local: true do |f| %>
+    <div class="users-edits">
+      <div class="user-edit-label"><%= f.label :name %>:</div>
+      <div class="user-edit-field"><%= f.text_field :name, class: "user-edit " %></div>
+    </div>
+    
+    <div class="users-edits">
+      <div class="user-edit-label"><%= f.label :bio %>:</div>
+      <div class="user-edit-field"><%= f.text_area :bio, class: "user-edit user-bio" %></div>
+    </div>
+    
+    <div class="users-edits">
+      <div class="user-edit-label"><%= f.label :email %>:</div>
+      <div class="user-edit-field"><%= f.text_field :email, class: "user-edit " %></div>
+    </div>
+    
+    <div class="users-edits">
+      <div class="user-edit-label"><%= f.label :phone %>:</div>
+      <div class="user-edit-field"><%= f.text_field :phone, class: "user-edit " %></div>
+    </div>
+
+    <div><%= f.submit "Submit", class: "comment-btn" %></div>
+  <% end %>
+</div>

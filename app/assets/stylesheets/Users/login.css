@@ -1,23 +1,8 @@
-.login .logos{
-	width: 280px;
-	margin: auto;
-	margin-top: 4rem;
-}
-.login .logo{
-	margin-left: auto;
-	margin-right: auto;
-	width: 280px;
-}
-.login .logos h2{
-	color: white;
-	text-align: center;
-	font-size: 2rem;
-}
 .login .login-box{
 	border: 2px solid white;
 	width: 80%;
 	margin: auto;
-	margin-top: 4rem;
+	margin-top: 8rem;
 	background-color: #fff;
 	border-radius: 20px;
 }
@@ -72,49 +57,22 @@
 	margin-top: 2.5rem;
 }
 @media only screen and (max-height: 800px) {
-	.login .logos{
-		margin-top: 3rem;
-		width: 180px;
-	}
-	.login .logo{
-		margin-top: 0;
-		width: 180px;
-	}
-	.login .logos h2{
-		margin-top: 0;
-		font-size: 25px;
+	.login-logo{
+		margin-top: 4rem;
 	}
 
 	.login .login-box{
-		margin-top: 2rem;
+		margin-top: 6rem;
 	}
 	.login .login-box .login-btn{
 		margin-top: 1rem;
 	}
 }
 @media only screen and (max-height: 700px) {
-	.login .logos{
-		margin-top: 0;
-		width: 150px;
-	}
-	.login .logo{
-		margin-top: 0;
-		width: 150px;
-	}
-	.login .logos h2{
-		margin-top: 0;
-		font-size: 20px;
-	}
-
 	.login .login-box{
-		margin-top: 2rem;
+		margin-top: 3rem;
 	}
 	.login .login-box .login-btn{
 		margin-top: 1rem;
-	}
-}
-@media only screen and (max-height: 500px) {
-	.login .logos{
-		display: none;
 	}
 }

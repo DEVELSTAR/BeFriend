@@ -1,3 +1,4 @@
+<%= render 'layouts/home_back_btn' %>
 <div class="show-posts">
 	<div><strong>Name: </strong><%= @post.user.name.present? ? @post.user.name : @post.user.email %>
 	<div><strong>Title: </strong><%= @post.title %></div>

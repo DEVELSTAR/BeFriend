@@ -1,3 +1,4 @@
+<%= render 'layouts/home_back_btn' %>
 <div class="followers" >
 	<div class="total-followers"><strong>Total Followees: </strong><%= current_user.followees.count %></div>
 	<% current_user.followees.each do |f| %>

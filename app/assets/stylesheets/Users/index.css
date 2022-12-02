@@ -10,19 +10,25 @@
 	color: white;
 	font-size: 2rem;
 }
+.users-user-btns{
+	text-align: center;
+	background-color: blue;
+	margin-top: 1rem;
+}
 .index-follow{
 	background-color: blue;
-	padding: .3rem 1.2rem;
 	font-weight: bolder;
-	font-size: 1.2rem;
+	font-size: 2rem;
 	color: white;
 	cursor: pointer;
+	width: 100%;
 }
 .index-unfollow{
 	background-color: red;
-	padding: .3rem 1.2rem;
+	border: 2px solid red;
 	font-weight: bolder;
-	font-size: 1.2rem;
+	font-size: 2rem;
 	color: white;
 	cursor: pointer;
+	width: 100%;
 }

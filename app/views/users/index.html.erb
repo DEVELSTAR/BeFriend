@@ -9,7 +9,7 @@
       <div><strong>Phone: </strong><%= u.phone ? u.phone : 'unavailable' %></div>
       <div><strong>Total posts = </strong><%= u.posts.count %></div>
       <div><strong>Total comments = </strong><%= u.comments.count %></div>
-      <div>
+      <div class="users-user-btns">
         <% if u == current_user %>
           <%= link_to "Edit Your Profile", edit_user_path(current_user), class: "index-follow" %>
         <% elsif current_user.followees.include?(u)  %>

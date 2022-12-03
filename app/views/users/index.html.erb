@@ -30,7 +30,6 @@
       <% end %>
 
       <div class="users-user-btns">
-        <%= link_to "Follow", new_user_session_path, method: "POST", class: "index-follow" %> 
         <% if user_signed_in? %>
           <% if u == current_user %>
             <%= link_to "Edit Your Profile", edit_user_path(current_user), class: "index-follow" %>
@@ -39,6 +38,8 @@
           <% else %>
             <%= button_to "Follow", follow_user_path(u), method: "POST", class: "index-follow" %>
           <% end %>
+        <% else %>
+          <%= link_to "Follow", new_user_session_path, method: "POST", class: "index-follow" %> 
         <% end %>
       </div>
     </div>

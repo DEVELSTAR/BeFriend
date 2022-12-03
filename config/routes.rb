@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   
   resources :posts do 
     resources :comments
+    member do 
+      put :update_status
+    end
   end
-
+ 
   resources :follows
   
   post '/users/:id/follow', to: "users#follow", as: "follow_user"

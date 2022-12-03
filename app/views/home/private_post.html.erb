@@ -4,6 +4,7 @@
   <% if post.status == "private" %>
     <div class="post">
     <% c = c + 1 %>
+      <div class="font1"><strong>Post id  </strong><%= post.id %></div>
       <div><strong>Title: </strong><%= post.title %></div>
       <div><strong>Desc: </strong><%= post.description %></div>
       <div class="font1"><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>

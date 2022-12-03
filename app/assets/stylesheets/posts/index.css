@@ -55,4 +55,5 @@ textarea{
 	background-color: blue;
 	color: white;
 	font-weight: bolder;
+	cursor: pointer;
 }

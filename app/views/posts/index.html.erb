@@ -49,7 +49,7 @@
       
       <div>
         <%= form_with model: [post, post.comments.build] do |form| %>
-          <div><%= form.hidden_field :user_id, value: @user %></div>
+          <div><%= form.hidden_field :user_id, value: current_user.id if user_signed_in? %></div>
           <div><%= form.hidden_field :post_id, value: post.id %></div>
           <div><%= form.text_area :body, placeholder: "Add a new comment...", class: "comment-body" %></div>
           <div><%= form.submit "Comment", class: "comment-btn" %></div>

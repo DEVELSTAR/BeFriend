@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   end
 
   def private_post
-    @posts = current_user.posts.all.order(created_at: :desc)
+    @posts = current_user.posts.where(status: "private")
   end
 
   def liked_post
@@ -18,6 +18,8 @@ class HomeController < ApplicationController
 
   def my_posts
     @posts = current_user.posts.all.order(created_at: :desc)
+    @liked_posts = current_user.liked_posts.all
+    @private_posts_count = current_user.posts.where(status: "private").count 
   end
 
 end

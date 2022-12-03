@@ -9,12 +9,8 @@ class PostsController < ApplicationController
 	def update_status
 		@post = Post.find(params[:id])
 		@post.update(status: params[:status])
-		if params[:status].present? && Post::VALID_STATUSES.include?(params[:status].to_sym)
 		  @post.update(status: params[:status])
-		redirect_to @post, notice: "Status changed to #{@post.status}"
-		else
-		  redirect_to @post, alert: "Stop hacking"
-		end
+		redirect_to request.referrer
 	end
 
 	def show

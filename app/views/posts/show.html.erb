@@ -6,7 +6,6 @@
 		<div><strong>Title: </strong><%= @post.title %></div>
 		<div><strong>Desc: </strong><%= @post.description %></div>
 		<div>
-
 		  <% if @post.user == current_user %>
 		  <strong>Status: </strong>
 			  <% Post::VALID_STATUSES.each do |status| %>

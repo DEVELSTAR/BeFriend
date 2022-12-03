@@ -10,3 +10,10 @@
 	display: flex;
 	justify-content: space-around;
 }
+.liked-post-unlike{
+	border: 2px solid red;
+	background-color: red;
+	color: white;
+	font-weight: bolder;
+	cursor: pointer;
+}

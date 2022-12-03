@@ -1,0 +1,20 @@
+<% @posts.each do |post| %>
+<div class="post">
+    <div class="font1"><strong>Post id  </strong><%= post.id %></div>
+	<div><strong>Name: </strong><%= post.user.name.present? ? post.user.name : post.user.email %></div>
+	<div><strong>Title: </strong><%= link_to post.title, post_path(post) %></div>
+	<div><strong>Desc: </strong><%= post.description %></div>
+	<div>
+
+	  <% if post.user == current_user %>
+	  <strong>Status: </strong>
+		  <% Post::VALID_STATUSES.each do |status| %>
+		    <%= link_to_unless post.status.eql?(status.to_s), status, update_status_post_path(post, status: status), data: {turbo_method: :put} %>
+		  <% end %>
+	  <% end %>
+	</div>
+	<div class="font1"><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
+</div>
+<% end %>
+
+

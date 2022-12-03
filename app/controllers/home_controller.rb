@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!, :except => [:index]
+
   def index
-    @user = current_user
+    @user = User.find(params[:id]) if user_signed_in?
   end
 
   def friends_post

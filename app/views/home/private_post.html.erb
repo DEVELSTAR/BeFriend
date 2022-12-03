@@ -2,16 +2,16 @@
 <% c = 0 %>
 <% @posts.each do |post| %>
   <% if post.status == "private" %>
-    <div class="liked_post">
+    <div class="post">
     <% c = c + 1 %>
       <div><strong>Title: </strong><%= post.title %></div>
       <div><strong>Desc: </strong><%= post.description %></div>
-      <div class="post-id"><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
+      <div class="font1"><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
     </div>
   <% end %>
 <% end %>
 <% if c == 0  %>
-  <div class="liked_post">
+  <div class="post">
     <h3 >You don't have any private post.</h3><br>
     <h3><%= link_to 'create a private post', new_post_path  %></h3>
   </div>

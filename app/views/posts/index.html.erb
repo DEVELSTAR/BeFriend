@@ -4,7 +4,7 @@
   <% if post.status != 'Friends' && post.status != 'private' %>
   <% c = c + 1  %>
     <div class="posts-post">
-      <div class="post-id"><strong>Post id = > </strong> <%= post.id %></div>
+      <div class="font1"><strong>Post id  </strong><%= post.id %></div>
       <% if post.user.name.present? %>
         <strong>Name: </strong><%= link_to post.user.name, user_path(post.user) %><br>
       <% else %>
@@ -15,17 +15,22 @@
       <div><strong>desc: </strong><%= post.description %></div>
 
       <div class="post-index-likes">
-        <div><%= post.likes.count  %></div>
-        <% like = current_user.likes.find_by(post: post) %>
-        <div>
-          <% if like.nil? %>
-             <%= button_to "Like", likes_path, params: { like: {post_id: post.id}}, method: :post , class: "like" %>
-          <% else %>
-             <%= button_to "Unlike", like_path(like), method: :delete, class: "unlike" %>
-          <% end %>
-        </div>
+
+        <% if user_signed_in? %>
+          <% like = current_user.likes.find_by(post: post) %>
+          <div>
+            <% if like.nil? %>
+               <%= button_to "Like", likes_path, params: { like: {post_id: post.id}}, method: :post , class: "like" %>
+            <% else %>
+               <%= button_to "Unlike", like_path(like), method: :delete, class: "unlike" %>
+            <% end %>
+          </div>
+        <% else %>
+          <%= button_to "Like", '#', class: "like" %>
+        <% end %>
+        <div class="font2"><%= post.likes.count  %></div>
       </div>
-     <div class="post-index-created"><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
+      <div class="font1"><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
       <div>
         <%= button_to 'delete this post', post_path(post), method: :delete, class: "unlike" if post.user == current_user  %>
       </div>
@@ -44,7 +49,7 @@
       
       <div>
         <%= form_with model: [post, post.comments.build] do |form| %>
-          <div><%= form.hidden_field :user_id, value: current_user.id %></div>
+          <div><%= form.hidden_field :user_id, value: @user %></div>
           <div><%= form.hidden_field :post_id, value: post.id %></div>
           <div><%= form.text_area :body, placeholder: "Add a new comment...", class: "comment-body" %></div>
           <div><%= form.submit "Comment", class: "comment-btn" %></div>

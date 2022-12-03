@@ -1,17 +1,24 @@
+.login{
+	height: 100vh;
+	border: 1px solid white;
+}
 .login-logo{
-	font-size: 4rem;
+	font-size: 6rem;
 	font-weight: bolder;
 	text-align: center;
 	color: red;
 	font-family: 'Bebas Neue', cursive;
+	margin-top: 4rem;
 }
 .login .login-box{
-	border: 2px solid white;
-	width: 80%;
+	border: 2px solid black;
+	width: 90%;
 	margin: auto;
-	margin-top: 8rem;
-	background-color: #fff;
+	margin-top: 4rem;
+/*	background-color: #fff;*/
 	border-radius: 20px;
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,.5);
+
 }
 .login .login-box h2{
 	text-align: center;
@@ -57,7 +64,8 @@
 	font-weight: bolder;
 	font-size: 1.3rem;
 	height: 3rem;
-  border: none;
+    border: none;
+    cursor: pointer;
 }
 .login .links{
 	text-align: center;
@@ -66,6 +74,7 @@
 @media only screen and (max-height: 800px) {
 	.login-logo{
 		margin-top: 4rem;
+		font-size: 4rem;
 	}
 
 	.login .login-box{

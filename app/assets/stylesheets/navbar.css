@@ -17,3 +17,9 @@
 	font-weight: bolder;
 	font-size: 1.5rem;
 }
+.navbar-login{
+	background-color: red !important;
+}
+.navbar-login:hover{
+	background-color: blue !important;
+}

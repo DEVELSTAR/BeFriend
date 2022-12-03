@@ -3,7 +3,7 @@
 	padding: 1rem;
 	font-size: 2rem;
 	color: black;
-	border: 5px solid red;
+	border: 5px solid black;
 }
 .users-edits{
     margin-top: 1rem;
@@ -22,7 +22,7 @@
 	font-size: 1rem;
 	padding: .5rem 1rem;
 	margin-left: .5rem;
-	border: 2px solid red;
+	border: 2px solid black;
 }
 .user-bio{
 	height: 6rem;

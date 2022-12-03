@@ -3,7 +3,7 @@
 <% d = 0 %>
 <% current_user.followees.each do |followed| %>
 <% d = d + 1 %>
-  <% followed.posts.each do |post| %>
+  <% followed.posts.all.order(created_at: :desc).each do |post| %>
     <% if post.status != 'private' %>
     <% c = c + 1 %>
       <div class="post">

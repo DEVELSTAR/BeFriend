@@ -1,3 +1,5 @@
 class ApplicationController < ActionController::Base
-    before_action :authenticate_user!
+  rescue_from ActionController::Redirecting::UnsafeRedirectError do
+    redirect_to root_path
+  end
 end

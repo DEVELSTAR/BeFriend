@@ -40,7 +40,17 @@
 	.users-edit{
 		margin-top: 0;
 	}
+	.back-btns{
+		padding: 0 !important;
+	}
 	.back-btn{
 		display: none;
+		padding-top: 0rem;
 	}
+	.home-btn{
+		display: none;
+		padding-top: 0rem;
+
+	}
+
 }

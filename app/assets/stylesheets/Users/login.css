@@ -10,45 +10,41 @@
 	font-family: 'Bebas Neue', cursive;
 	margin-top: 4rem;
 }
+.without-login-link{
+	text-align: center;
+}
 .login .login-box{
-	border: 2px solid black;
+	border: .1px solid whitesmoke;
 	width: 90%;
 	margin: auto;
 	margin-top: 4rem;
-/*	background-color: #fff;*/
 	border-radius: 20px;
-	box-shadow: 10px 10px 5px 0px rgba(0,0,0,.5);
-
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,.4);
 }
 .login .login-box h2{
 	text-align: center;
 	padding-top: 1.5rem;
-	/*border: 2px solid red;*/
 }
 .login .login-box .login-fields{
-	/*border: 1px solid red;*/
-	/*height: 68%;*/
 	padding-left: 1rem ;
 	padding-right: 1rem ;
 }
 .login .login-box .login-fields .fieldt{
-	/*border: 2px solid red;*/
 	width: 100%;
 }
 .login .login-box .login-fields .fieldl{
 	font-size: 1.3rem;
-	/*border: 2px solid red;*/
 }
 .login .login-box .login-fields .field{
 	margin-top: 1.2rem;
-	/*border: 2px solid red;*/
 }
 .login .login-box input{
 	border: none;
-  border-bottom: 2px solid black;
+    border-bottom: 2px solid black;
 	margin-top: 0.2rem;
 	outline: none;
-  font-size: 1.3rem;
+    font-size: 1.3rem;
+    background: none;
 }
 
 .login .login-box .login-btn{
@@ -62,10 +58,11 @@
 	background-color: #2a00e9;
 	color: white;
 	font-weight: bolder;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	height: 3rem;
     border: none;
     cursor: pointer;
+    font-family: 'Teko', sans-serif;
 }
 .login .links{
 	text-align: center;
@@ -78,10 +75,11 @@
 	}
 
 	.login .login-box{
-		margin-top: 6rem;
+		margin-top: 5rem;
 	}
 	.login .login-box .login-btn{
 		margin-top: 1rem;
+	    box-shadow: 10px 10px 5px 0px rgba(0,0,0,.3);
 	}
 }
 @media only screen and (max-height: 700px) {

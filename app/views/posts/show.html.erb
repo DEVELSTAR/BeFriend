@@ -1,7 +1,9 @@
-<%= render 'layouts/home_back_btn' %>
-<div class="post">
-	<div><strong>Name: </strong><%= @post.user.name.present? ? @post.user.name : @post.user.email %>
-	<div><strong>Title: </strong><%= @post.title %></div>
-	<div><strong>Desc: </strong><%= @post.description %></div>
-	<div class="font1"><strong>Created at: </strong><%= time_ago_in_words(@post.created_at) %> ago</div>
+<div class="show-posts">
+	<%= render 'layouts/home_back_btn' %>
+	<div class="post">
+		<div><strong>Name: </strong><%= @post.user.name.present? ? @post.user.name : @post.user.email %>
+		<div><strong>Title: </strong><%= @post.title %></div>
+		<div><strong>Desc: </strong><%= @post.description %></div>
+		<div class="font1"><strong>Created at: </strong><%= time_ago_in_words(@post.created_at) %> ago</div>
+	</div>
 </div>

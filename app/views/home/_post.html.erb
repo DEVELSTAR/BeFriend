@@ -5,13 +5,14 @@
 	<div><strong>Title: </strong><%= link_to post.title, post_path(post) %></div>
 	<div><strong>Desc: </strong><%= post.description %></div>
 	<div>
-
 	  <% if post.user == current_user %>
 	  <strong>Status: </strong>
 		  <% Post::VALID_STATUSES.each do |status| %>
 		    <%= link_to_unless post.status.eql?(status.to_s), status, update_status_post_path(post, status: status), data: {turbo_method: :put} %>
 		  <% end %>
 	  <% end %>
+
+	  <%= button_to 'Delete', post_path(post), method: :delete, class: "liked-post-unlike" if post.user == current_user  %>
 	</div>
 	<div class="font1"><strong>Created at: </strong><%= time_ago_in_words(post.created_at) %> ago</div>
 </div>
